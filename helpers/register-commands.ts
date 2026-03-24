@@ -26,7 +26,7 @@ export const registerCommands = async (client: ClientWithCommands): Promise<void
     for (const folder of commandFolders) {
         const commandFiles = readdirSync(
             join(__dirname, "..", "commands", folder)
-        ).filter((file) => file.endsWith(".ts"));
+        ).filter((file) => file.endsWith(".js") || file.endsWith(".ts"));
         for (const file of commandFiles) {
             const filePath = join(__dirname, "..", "commands", folder, file);
             try {

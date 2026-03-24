@@ -14,7 +14,7 @@ export const registerEvents = async (client: Client): Promise<void> => {
         const eventFiles = await readdir(join(eventsPath, folder.name));
 
         for (const file of eventFiles) {
-            if (!file.endsWith(".ts")) continue;
+            if (!file.endsWith(".js") && !file.endsWith(".ts")) continue;
 
             const eventPath = join(eventsPath, folder.name, file);
             const eventModule = await import(`file://${eventPath}`);
