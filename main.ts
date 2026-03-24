@@ -15,4 +15,4 @@ const bootstrap = async () => {
     await client.login(process.env.DISCORD_TOKEN);
 };
 
-void bootstrap();
+bootstrap().catch(console.error);
